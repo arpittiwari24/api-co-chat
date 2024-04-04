@@ -19,6 +19,10 @@ app.use(express.json());
 
 const genAI = new GoogleGenerativeAI(process.env.API_KEY);
 
+app.get("/cron",async (req,res) => {
+  res.json("Everything's working fine !!")
+})
+
 app.post('/api/chat', async  (req, res) => {
     try {
         console.log(req.body.history);
